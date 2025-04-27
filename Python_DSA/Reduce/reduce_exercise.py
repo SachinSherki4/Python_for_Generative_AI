@@ -14,7 +14,9 @@ print(f"Total : {total} and Average : {average}") #Total : 4.15 and Average : 1.
 #Join a list of words into a sentence (like what tokenizer outputs)
 words = ["AI", "is", "changing", "the", "world"]
 sentance=reduce(lambda a,b:a+" "+b,words)
+rr=' '.join(x for x in words) #AI is changing the world
 print(sentance) #AI is changing the world
+print(rr)
 
 #3. Calculating Losses in ML
 # When training a model on batches, and you want to sum up all batch losses:
