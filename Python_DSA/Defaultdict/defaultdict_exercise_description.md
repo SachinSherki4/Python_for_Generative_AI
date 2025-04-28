@@ -1,5 +1,5 @@
 
-## Defaultdict dictionary in python Collections
+## Defaultdict Class in python Collections
 1. Defaultdict is special dictionary provided by Collections module in python.
 2. It automatically assign an default value when we try to access any missing key, when we try to access it,
 3. no need to manually check key is present or not.
