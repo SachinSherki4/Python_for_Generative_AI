@@ -30,3 +30,14 @@
     1. Why deque Helps : Track recent requests
     2. Real-world Example  : API throttling, real-time systems
 
+[Solutions](deque_exercise.py)
+
+## Mini Projects
+
+1. Project 1: IoT Sensor Network – Smart Room Temperature Alert System
+1. Step-by-Step Plan:
+   1. Simulate real-time temperature sensor readings.
+   2. Use a sliding window with deque to track recent values.
+   3. Calculate average, detect if new reading is >20% deviation.
+   4. Raise alerts in real-time.
+

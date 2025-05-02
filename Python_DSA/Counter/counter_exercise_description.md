@@ -1,17 +1,18 @@
 
-## Counter class in Python Collections Module
+## *Counter class in Python Collections Module*
 
+--- 
 1. Counter is class in Collections module help to count frequency of hashable objects(list,string, tuple, dict, etc)
 2. from collections import Counter
 3. Syntax : c=Counter(iterable_or_mapping)
 
-## Use Cases
+## *Use Cases*
 1. Counter from a List
 2. Counter from a string
 3. Most Common Elements
 4. Updating Counter
 
-## Why is Counter useful? : In real-world AI/ML/GenAI projects, you often have to analyze frequencies
+## *Why is Counter useful? : In real-world AI/ML/GenAI projects, you often have to analyze frequencies*
 1. Words in text data
 2. Labels in datasets
 3. Tokens in language models
