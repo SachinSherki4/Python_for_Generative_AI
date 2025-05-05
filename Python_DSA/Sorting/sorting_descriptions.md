@@ -76,16 +76,6 @@ Pass 2: 4 < 5 → move 5 right → insert 4 → [3, 4, 5, 1]
 Pass 3: 1 < all → shift all and insert → [1, 3, 4, 5]
 ```
 
-### *Merge Sort*
-1. It is efficient sorting algorithm in python used in productions.
-2. It works on devide and concoure stategy where whole array is divided into half then each half break until single element
-3. once all array break, it started merging two adjucent elements from each half in sorting ordered.
-4. at end, it merge two half in sorted ordered.
-
-> Exercise
->  1. 
-
-
 
 
 
