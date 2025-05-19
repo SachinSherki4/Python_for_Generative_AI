@@ -7,29 +7,31 @@ def merge_sort(arr):
     if len(arr) <= 1:
         return arr # it is already sorted
 
-
     mid=len(arr)//2 # center
-    left = merge_sort(arr[:mid])  # left array
-    right = merge_sort(arr[mid:]) ## right array
-    return merge_sort_with_customer_kay(left, right)
+    left = merge_sort(arr[:mid])  # left array calling again same function to break it down completely to single
+    right = merge_sort(arr[mid:]) ## right array calling again same function to break it down completely to single
+    print(f"Left Part : {left} and right part : {right}")
+    #return merge_sort_with_customer_kay(left, right)
+    return merge(left,right) # now call merge function, first all left and right will call this
+                             # function get sort then both together
 
 def merge(left,right):
-    sorted_array=[]
+    sorted_array=[] # to add sorted elements
     i=j=0
     ## merge element from both list in sorted ordered.
-    while i<len(left) and j < len(right):
+    while i<len(left) and j < len(right): # check array lenth
         if left[i] <= right[j]:
             sorted_array.append(left[i])
-            i +=1
+            i +=1 # increase size
         else:
             sorted_array.append(right[j])
             j +=1
-    sorted_array.extend(left[i:])
+    sorted_array.extend(left[i:]) # once all sorted add leftover element
     sorted_array.extend(right[j:])
-    return sorted_array
+    return sorted_array  # finally return sorted array
 
 numbers=[3,6,22,8,4,2]
-#print(merge_sort(numbers))
+print(merge_sort(numbers))
 
 
 ## Exercise 2. Merge sort on a list of tuple
@@ -45,19 +47,19 @@ def sort_tutple(left, right):
     if i <len(left) and j <len(right):
         pass
 
-def merge_sort_with_customer_kay(left: List, right : List, key=lambda x :x) -> List :
-    result=[]
-    i=j=0
-    while i <len(left) and j < len(right):
-        if key(left[i]) < key(right[j]):
-           result.append(left[i])
-           i +=1
-        else:
-            result.append(right[j])
-            j +=1
-    result.extend(left[i:])
-    result.extend(right[j:])
-    return result
+# def merge_sort_with_customer_kay(left: List, right : List, key=lambda x :x) -> List :
+#     result=[]
+#     i=j=0
+#     while i <len(left) and j < len(right):
+#         if key(left[i]) < key(right[j]):
+#            result.append(left[i])
+#            i +=1
+#         else:
+#             result.append(right[j])
+#             j +=1
+#     result.extend(left[i:])
+#     result.extend(right[j:])
+#     return result
 
 ## Exercse 3. Performeance benchmark with large data set
 #number_list= [random.randint(0,100000) for _ in range(1_00_00_000)]
@@ -70,4 +72,4 @@ print(f"Total tim taken by merge sort to sort 1 Crore numbers is {end - start :.
 neste_list= [[random.randint(1,555) for _ in range(3)] for _ in range(3)]
 print(neste_list) # [[219, 278, 344], [525, 269, 152], [542, 348, 421]]
 
-print(f"Sorted Nested List : {merge_sort(neste_list)}")
+#print(f"Sorted Nested List : {merge_sort(neste_list)}")

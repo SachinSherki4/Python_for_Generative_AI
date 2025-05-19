@@ -9,6 +9,7 @@ def insertion_sort(arr):
             arr[j + 1] = arr[j]  # Shift right
             j -= 1
         arr[j + 1] = current  # Insert at correct spot
+        print(arr[j + 1])
 
 arr = [5, 3, 4, 1]
 insertion_sort(arr)

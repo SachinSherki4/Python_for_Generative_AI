@@ -30,15 +30,15 @@ def quick_sort_student_data(arr):
     pivot=arr[0] # take first element as pivot
     left = [ x for x in arr[1:] if x['Score'] < pivot['Score']] # add all element in left which are less that pivot
     right = [x for x in arr[1:] if x['Score'] >= pivot['Score']]  # add all element to right which are equal or more greater than pivot
-    return quick_sort(left) + [pivot] + quick_sort(right) # Now use recursion to sort both left and right array with center as pivote array element
+    return quick_sort_student_data(left) + [pivot] + quick_sort_student_data(right) # Now use recursion to sort both left and right array with center as pivote array element
 
 
 ## Exercse 3. Sort List of students based on score
-student_data=[{"ID" :random.randint(1,100), "Name": ''.join(random.choices(string.ascii_lowercase,k=6)).capitalize(), "Score": random.randint(30,95)} for _ in range(5)]
+student_data=[{"ID" :random.randint(1,100), "Name": ''.join(random.choices(string.ascii_lowercase,k=6)).capitalize(), "Score": random.randint(30,95)} for _ in range(10)]
 pprint.pprint(student_data)
 
 sorted_students= quick_sort_student_data(student_data)
-print(f"Sorted Students based on Score uisng quick sort are \n{sorted_students}")
+pprint.pprint(f"Sorted Students based on Score uisng quick sort are \n{sorted_students}")
 
 
 

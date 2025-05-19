@@ -9,9 +9,10 @@ def bubble_sort(arr):
                 # Swap
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 swapped = True
+                #print(f"swapp at {arr[j]} and {arr[j + 1]}")
         if not swapped:
             break  # List is sorted already
 
-nums = [5, 1, 4, 2, 8]
+nums = [3,8,1,5,4,9]
 bubble_sort(nums)
 print(nums)  # Output: [1, 2, 4, 5, 8]
