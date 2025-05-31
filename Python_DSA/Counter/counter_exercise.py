@@ -59,6 +59,7 @@ vowel_counter=Counter()
 for char in sentence.lower():
     if char in vowels:
         vowel_counter[char] +=1
+print(vowel_counter) #Counter({'a': 2, 'u': 2, 'e': 1, 'i': 1}) but to print remaining vowels which are not available in this string
 # to get all vowel count including zero iterate each vowel, use get() to get each vowel counter, set 0 if not found
 final_vowel_count={vowel: vowel_counter.get(vowel,0) for vowel in vowels}
 print(final_vowel_count) #{'a': 2, 'e': 1, 'i': 1, 'o': 0, 'u': 2}
@@ -110,3 +111,33 @@ Counter({'Machine': 2, 'is': 2, 'learning': 1, 'fun.': 1, 'Deep': 1, 'Learning':
          'and': 1, 'AI': 1, 'are': 1, 'the': 1, 'future!': 1, 'Python': 1, 
             'great': 1, 'for': 1, 'Learning.': 1})
 """
+
+"""Count Number of students studied in same class"""
+students_class_data = [
+    {"name": "Alice",   "class": "10A"},
+    {"name": "Bob",     "class": "10B"},
+    {"name": "Charlie", "class": "10A"},
+    {"name": "Diana",   "class": "10C"},
+    {"name": "Ethan",   "class": "10B"},
+    {"name": "Fiona",   "class": "10C"},
+    {"name": "George",  "class": "10A"},
+    {"name": "Hannah",  "class": "10B"},
+    {"name": "Ian",     "class": "10C"},
+    {"name": "Julia",   "class": "10A"},
+]
+
+student_class=[]
+for student in students_class_data:
+    student_class.append(student['class'])
+    #print(f"Counter Update : {student_class_counter}")
+student_class_counter=Counter(student_class)
+print(student_class_counter) #Counter({'10A': 4, '10B': 3, '10C': 3})
+for classes,counter in student_class_counter.items():
+    print(f"{classes} : {counter}")
+
+"""Count the Students against class"""
+stud_data=defaultdict(list)
+for  student in students_class_data:
+    stud_data[student['class']].append(student['name'])  # this will add students data with class as key
+print(stud_data)
+#defaultdict(<class 'list'>, {'10A': ['Alice', 'Charlie', 'George', 'Julia'], '10B': ['Bob', 'Ethan', 'Hannah'], '10C': ['Diana', 'Fiona', 'Ian']})

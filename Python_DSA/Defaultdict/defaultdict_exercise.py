@@ -43,8 +43,9 @@ print(count) #{'the': 2, 'cat': 1, 'sat': 1, 'on': 1, 'mat': 1})
 edges = [('A', 'B'), ('A', 'C'), ('B', 'C')]
 graph=defaultdict(list)
 for start, end in edges:
-    graph[start].append(end)
-print(graph) #{'A': ['B', 'C'], 'B': ['C']})
+    graph[start].append(end) # unidirectional
+    graph[end].append(start) # bi-directional
+print(graph) #{'A': ['B', 'C'], 'B': ['C']}) {'A': ['B', 'C'], 'B': ['A', 'C'], 'C': ['A', 'B']})
 
 #4. ML Pipelines — Grouping Model Metrics : When aggregating metrics from multiple experiments
 experiments = [

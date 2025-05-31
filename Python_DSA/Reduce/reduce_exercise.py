@@ -26,22 +26,48 @@ print(total_loss) #0.54
 
 
 #Exercise 1. Sum of All Numbers
-number1=[2,4,6,67,8]
+number1=[2,68,6,67,8]
 sum=reduce((lambda x,y : x+y),number1)
 print(f"Sum of all numbers is : {sum}") #87
 
 # Exercise 2. Multiplication of all numbers
-number2=[2,4,6,67,8]
+number2=[2,68,6,67,8]
 multi=reduce(lambda x,y : x*y, number2)
 print(multi) #25728
 
 #Exercise 3. Maximum Numbers
-number3=[2,4,6,67,8]
+number3=[2,69,6,67,8]
 max=reduce(lambda x,y : (x if x>y else y),number3)
-print(max) #67
+min=reduce(lambda x,y : (x if x<y else y), number3)
+print(max) #69
+print(min) #2
 
 #Exercise 4. Given a list of dictionaries with scores, use reduce() to calculate the total score
 scores = [{"math": 80}, {"math": 90}, {"math": 75}]
 total_score=reduce(lambda a,b:(a+b),list(map(lambda x :x['math'],scores)))
 print(total_score) #245
 # list(map(lambda x :x['math'],scores)) :  this will fetch all score and store in list
+
+# Below are the student data  calculate average of all subject
+
+students = [
+    {"name": "Alice", "class": "10A", "scores": {"math": 85, "science": 90, "geography": 80,"history":88}},
+    {"name": "Bob", "class": "10A", "scores": {"math": 78, "science": 82, "geography": 88}},
+    {"name": "Charlie", "class": "10A", "scores": {"math": 92, "science": 87, "geography": 85}},
+]
+
+# Step 1: Use reduce to accumulate total scores
+total_sub_score=reduce(lambda acc,student:{subject:acc.get(subject,0)+student['scores'].get(subject,0)
+                                           for subject in student['scores']}, students,{})
+print(total_sub_score)  # {'math': 255, 'science': 259, 'geography': 253}
+num_students=len(students)
+
+avg_score= {subject : round(total_score/num_students,2) for subject,total_score in total_sub_score.items()}
+for Subject, avg in avg_score.items():
+    print(f"{Subject.capitalize()} : {avg}")
+
+"""
+Math : 85.0
+Science : 86.33
+Geography : 84.33
+"""

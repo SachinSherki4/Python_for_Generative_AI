@@ -34,9 +34,10 @@ for metric, value in metrics.items():
 od = OrderedDict()
 od['apple'] = 3
 od['banana'] = 2
+od['banana'] = 4
 od['cherry'] = 5
-print(od) #OrderedDict({'apple': 3, 'banana': 2, 'cherry': 5})
+print(od) #OrderedDict({'apple': 3, 'banana': 4, 'cherry': 5})
 od.move_to_end('apple')
-print(od) #OrderedDict({'banana': 2, 'cherry': 5, 'apple': 3})
+print(od) #OrderedDict({'banana': 4, 'cherry': 5, 'apple': 3})
 print(od.popitem()) #('apple', 3) default Last One
 print(od.popitem(last=False)) #('banana', 2) this will remove first one

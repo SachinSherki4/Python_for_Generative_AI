@@ -3,7 +3,7 @@
 """ 1. Data Preprocessing – ML / AI """
 #Remove empty or null values from a dataset
 # Helps in cleaning datasets before training models.
-data = ["data", "", "ML", None, "AI", ""]
+data = ["data", "", "ML", None, "AI", "",None]
 process_data=list(filter(lambda a : a!= "" and a!= None, data)) #['data', 'ML', 'AI']
 process_data2= list(filter(lambda a:a, data))
 print(process_data) #['data', 'ML', 'AI']

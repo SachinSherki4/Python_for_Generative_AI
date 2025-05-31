@@ -68,7 +68,9 @@ print(f"Sort them by accuracy : {sorted_accuracy}")
 #8. Given a list of full names (e.g., "John Doe"), extract just the first names using map() and a lambda.
 full_name=["Jack Mah","Rahul Jaykar","Sachin Tendulkar","Rohit Sharma","Virat Kohli"]
 first_names=list(map(lambda n:(n.split(" "))[0],full_name))
+#names=list(map(lambda x:x[0], d.split()) for d in full_name)
 print(f"First Name list : {first_names}") #['Jack', 'Rahul', 'Sachin', 'Rohit', 'Virat']
+
 
 #9. You have a list of dictionaries representing students Use map() to extract just the names.
 students_data = [
@@ -76,6 +78,6 @@ students_data = [
     {"name": "Bob", "score": 60},
     {"name": "Charlie", "score": 90}
 ]
-names=dict(zip("name", map("name",students_data)))
-print(names)
+all_name=list(map(lambda x: x['name'], students_data))
+print(all_name) #['Alice', 'Bob', 'Charlie']
 

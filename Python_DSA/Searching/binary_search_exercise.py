@@ -151,4 +151,7 @@ target=77
 print(linear_approach(arr3,target)) #2
 print(count_occurance(arr3, target)) #2
 
+dataa=[2, 2, 5, 6, 7, 7, 7, 66, 77, 77]
+print(last_occurance(dataa,7))
+
 

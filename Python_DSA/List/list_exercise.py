@@ -81,7 +81,9 @@ print(filtered_num) #[10, 25]
 text = "Generative AI is revolutionary"
 vowels=['a','e','i','o','u']
 filtered_volwels=[v for v in text if v in vowels]
+unique_vowels=set(filtered_volwels)
 print(filtered_volwels) #['e', 'e', 'a', 'i', 'e', 'i', 'e', 'o', 'u', 'i', 'o', 'a']
+print(unique_vowels)
 
 #Exercise 8. Given a list of tuples [(10, 2), (20, 5), (30, 3)], calculate the division of each pair and return a list.
 pairs=[(10, 2), (20, 5), (30, 3)]
@@ -96,5 +98,9 @@ print(clean_words) #['GEN AI']
 
 
 
-
+# Remove duplicates
+seq="Hey! may name is Sachin and my full name is Sachin Sherki"
+unique_tokens=[]
+unique_tokens=[t for t in seq.split() if t not in unique_tokens]
+print(unique_tokens)
 
